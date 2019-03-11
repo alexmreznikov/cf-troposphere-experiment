@@ -1,17 +1,12 @@
 from troposphere import (
-    AWS_ACCOUNT_ID,
     AWS_REGION,
-    Equals,
     GetAtt,
     iam,
-    Join,
     logs,
-    Not,
     Output,
     Parameter,
     Ref,
 )
-
 from troposphere.ecs import (
     ContainerDefinition,
     DeploymentConfiguration,
@@ -30,7 +25,6 @@ from cluster import (
     application_target_group,
     web_worker_port,
 )
-
 from template import template
 
 application_revision = Ref(template.add_parameter(Parameter(
